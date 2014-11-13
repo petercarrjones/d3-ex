@@ -1,7 +1,7 @@
 queue()
 .defer(d3.json, "world.geojson")
 .defer(d3.csv, "cities.csv")
-.await(function(error, file1, file2) { createMap(file1, file2); });
+.await(function(error, file1, file2) { createMap(file1, file2);});
 
 function createMap(countries, cities) {
 var width = 500;
@@ -41,11 +41,11 @@ d3.selectAll("path.countries")
 .on("mouseout", clearCenterBounds)
 function centerBounds(d,i) {
 var thisBounds = geoPath.bounds(d);
-var thisCenter = geoPath.centroid(d); #a
+var thisCenter = geoPath.centroid(d); 
 d3.select("svg")
 .append("rect")
 .attr("class", "bbox")
-.attr("x", thisBounds[0][0]) #b
+.attr("x", thisBounds[0][0]) 
 .attr("y", thisBounds[0][1])
 .attr("width", thisBounds[1][0] - thisBounds[0][0])
 .attr("height", thisBounds[1][1] - thisBounds[0][1])
@@ -53,10 +53,10 @@ d3.select("svg")
 .append("circle")
 .attr("class", "centroid")
 .attr("r", 5)
-.attr("cx", thisCenter[0]).attr("cy", thisCenter[1]) #c
+.attr("cx", thisCenter[0]).attr("cy", thisCenter[1]) 
 .style("pointer-events", "none")
 }
-function clearCenterBounds() { #d
+function clearCenterBounds() { 
 d3.selectAll("circle.centroid").remove();
 d3.selectAll("rect.bbox").remove();
 }

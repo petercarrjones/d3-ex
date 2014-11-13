@@ -5,11 +5,11 @@ queue()
 
 
 /d3.json("world.geojson", createMap);/
-function createMap(countries) {
+function createMap(countries, cities) {
  var width = 500; 
  var height = 500;
 
- var aProjection = d3.geo.mercator(); 
+ var aProjection = d3.geo.mercator() 
   .scale(120) 
   .translate([width / 2, height / 2])
 
